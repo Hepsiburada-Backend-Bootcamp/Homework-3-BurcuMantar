@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using Web.Dtos.Hospital;
 using Web.Interfaces;
 
-namespace Web.Services 
+namespace Web.Services
 {
-    public class HospitalService :IHospitalService
+    public class HospitalService : IHospitalService
     {
         private readonly IMapper _mapper;
         private readonly IAsyncRepository<Hospital> _hospitalRepository;

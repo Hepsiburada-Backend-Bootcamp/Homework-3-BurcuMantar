@@ -27,7 +27,7 @@ namespace Web.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            _logger.LogInformation("User requested the HospitalController's Get method.");
+            _logger.LogInformation("User requested the PatientController's Get method.");
             var result = _patientService.GetAll();
             return Ok(result);
 
@@ -38,7 +38,7 @@ namespace Web.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            _logger.LogInformation("User requested the DoctorController's GetbyId method.");
+            _logger.LogInformation("User requested the PatientController's GetbyId method.");
 
             var result = _patientService.GetById(id);
             if (result == null)

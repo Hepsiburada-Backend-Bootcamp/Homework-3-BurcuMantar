@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Data
 {
-    public class EFRepository<T> : IAsyncRepository<T> where T :BaseEntity
+    public class EFRepository<T> : IAsyncRepository<T> where T : BaseEntity
     {
         private readonly ProjectDbContext _db;
 
@@ -25,7 +25,7 @@ namespace Infrastructure.Data
         public async Task Delete(T entity)
         {
             _db.Remove(entity);
-          _db.SaveChanges();
+            _db.SaveChanges();
         }
 
         public async Task<T> GetById(int id)
@@ -35,13 +35,13 @@ namespace Infrastructure.Data
 
         public async Task<List<T>> ListAll()
         {
-            return  _db.Set<T>().ToList();
+            return _db.Set<T>().ToList();
         }
 
         public async Task Update(T entity)
         {
             _db.Update(entity);
-             _db.SaveChanges();
+            _db.SaveChanges();
         }
     }
 }

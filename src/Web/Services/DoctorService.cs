@@ -23,6 +23,7 @@ namespace Web.Services
         public Task Create(DoctorPostDto drPostDto)
         {
             var doctor = _mapper.Map<Doctor>(drPostDto);
+            if (doctor == null) throw new NullReferenceException("Doctor object is null.");
             return _doctorRepository.Add(doctor);
         }
 
